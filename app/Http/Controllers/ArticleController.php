@@ -40,6 +40,15 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        $article = $request->isMethod('put')? Artilce::findOrFail($request->id): new Artilce;
+
+        $article->id = $request->input('id');
+        $article->title = $request->input('title');
+        $article->body = $request->input('body');
+
+        if ($article->save()){
+            return new ArticleResource($article);
+        }
     }
 
     /**
@@ -87,5 +96,9 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+
+        $article = Artilce::findOrFail($id)->delete();
+
+        return new ArticleResource($article);
     }
 }

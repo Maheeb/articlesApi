@@ -2,5 +2,5 @@
 
 ## About this project
 
-This is an API made with Laravel.
+This is an API made with Laravel, which cnontains information about a blog.
 :)

@@ -3,3 +3,4 @@
 ## About this project
 
 This is an API made with Laravel.
+:)
